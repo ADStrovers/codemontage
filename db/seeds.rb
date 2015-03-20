@@ -11,8 +11,7 @@
   @user.is_admin = true
   @user.save!
 
-
-# Exmaples
+  # Exmaples
   # Organizations
   Organization.create(
     name: "CodeMontage", 
