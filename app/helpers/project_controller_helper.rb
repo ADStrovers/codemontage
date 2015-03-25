@@ -11,4 +11,24 @@ module ProjectControllerHelper
       link_to tag.name, projects_path(tags: tag.name)
     end.join(', ').html_safe
   end
+  
+  def project_tech_and_cause_tags_lists
+    technologies = []
+    causes = []
+    
+    self.each do |project|
+      project.technologies.each do |tech|
+        unless technologies.include? tech.name
+          technologies << tech.name
+        end
+      end
+      project.causes.each do |cause|
+        unless causes.include? cause.name
+          causes << cause.name
+        end
+      end
+    end
+      
+    return technologies, causes
+  end
 end
