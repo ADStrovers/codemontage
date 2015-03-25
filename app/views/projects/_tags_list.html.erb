@@ -1,0 +1,6 @@
+<form>
+  <input type="radio", name="tags", value="all" checked>All</input>
+  <% tag_list.each do |tech| %>
+  <input type="radio", name="tags", value="<%= tech %>"><%= tech %></input>
+  <% end %>
+</form>
