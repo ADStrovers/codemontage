@@ -12,11 +12,11 @@ module ProjectControllerHelper
     end.join(', ').html_safe
   end
   
-  def project_tech_and_cause_tags_lists
+  def projects_tech_and_cause_tags_lists(projects_array)
     technologies = []
     causes = []
     
-    self.each do |project|
+    projects_array.each do |project|
       project.technologies.each do |tech|
         unless technologies.include? tech.name
           technologies << tech.name
