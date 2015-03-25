@@ -29,6 +29,6 @@ module ProjectControllerHelper
       end
     end
       
-    return technologies, causes
+    return technologies.sort, causes.sort
   end
 end
