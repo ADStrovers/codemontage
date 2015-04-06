@@ -1,18 +1,19 @@
+function tagLoop() {
+  if (this.value === "all") {
+    window.location.href = href;
+  } else {
+    window.location.href = href +"?tags=" + this.value;
+  }
+};
+
 window.onload = function() {
   var tags = [];
-  var href = window.location.origin + window.location.pathname
-  console.log(href)
+  var href = window.location.origin + window.location.pathname;
   
   tags = document.getElementsByClassName("tag_radio");
   
-  for (i = 0; i < tags.length; i++) {
-    tags[i].addEventListener("click", function() {
-      if (this.value === "all") {
-        window.location.href = href;
-      } else {
-        window.location.href = href +"?tags=" + this.value;
-      };
-    });
-  };
-  
+  for (var i = 0; i < tags.length; i++) {
+    tags[i].addEventListener("click", tagLoop)
+  })
 };
+  
