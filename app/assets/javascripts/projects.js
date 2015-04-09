@@ -14,6 +14,6 @@ window.onload = function() {
   
   for (var i = 0; i < tags.length; i++) {
     tags[i].addEventListener("click", tagLoop)
-  })
+  }
 };
   
